@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 1600px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.movies-form {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 0.4em;
+}
+
+.search-input {
+  min-width: 18em;
+  margin-right: 0;
+}
+
+.movies-form button {
+  margin-right: 0;
+}
+
+main {
+  width: 100%;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+}
+
+.movies-container {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1em;
+}
+
+.movie {
+  text-align: center;
+}
