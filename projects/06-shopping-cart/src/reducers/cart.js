@@ -13,6 +13,7 @@ export const updateLocalStorage = state => {
 }
 
 const UPDATE_STATE_BY_ACTION = {
+  // Las llaves aqui son para poder usar el valor 'ADD_TO_CART'
   [CART_ACTION_TYPES.ADD_TO_CART]: (state, action) => {
     const { id } = action.payload
     const productInCartIndex = state.findIndex(item => item.id === id)
