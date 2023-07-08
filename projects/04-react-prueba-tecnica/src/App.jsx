@@ -1,6 +1,7 @@
 import './App.css'
 import { useCatImage } from './hooks/useCatImage'
 import { useCatFact } from './hooks/useCatFact'
+import { useDebounce } from './hooks/useDebounce'
 
 // Componente
 export function App() {
@@ -8,10 +9,13 @@ export function App() {
   const { fact, refreshFact } = useCatFact()
   // Recuperar la imagen segun la primer palabra del fact con un custom hook
   const { imageUrl } = useCatImage({ fact })
+  const { debounce } = useDebounce()
+
+  const debouncedRefreshFact = debounce(refreshFact, 500)
 
   const handleClick = async () => {
     // Llamar a la funcion del hook useCatFact pata actualizar el estado de fact
-    refreshFact()
+    debouncedRefreshFact()
   }
 
   return (

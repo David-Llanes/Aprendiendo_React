@@ -11,7 +11,9 @@ export const useCatFact = () => {
   }
 
   // Recuperar el hecho cuando recien carga la pagina
-  useEffect(refreshFact, [])
+  useEffect(() => {
+    refreshFact()
+  }, [])
 
   return { fact, refreshFact }
 }

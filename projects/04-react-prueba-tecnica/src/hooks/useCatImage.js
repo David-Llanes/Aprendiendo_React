@@ -8,6 +8,7 @@ export function useCatImage({ fact }) {
 
   useEffect(() => {
     if (fact) {
+      let ignore = false
       const firstWord = fact.split(' ')[0]
       console.log(firstWord)
 
@@ -17,8 +18,13 @@ export function useCatImage({ fact }) {
         .then(res => res.json())
         .then(data => {
           const { url } = data
-          setImageUrl(url)
+          if (!ignore) {
+            setImageUrl(url)
+          }
         })
+      return () => {
+        ignore = true
+      }
     }
   }, [fact])
 
