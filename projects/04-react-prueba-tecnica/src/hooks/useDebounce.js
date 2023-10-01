@@ -14,3 +14,13 @@ export function useDebounce() {
 
   return { debounce }
 }
+
+// let timeoutID;
+// export const debounce = (func, delay) => {
+//   return () => {
+//     clearTimeout(timeoutID)
+//     timeoutID = setTimeout(() => {
+//       func()
+//     }, delay)
+//   }
+// }
